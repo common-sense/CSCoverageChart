@@ -13,10 +13,10 @@
 
 @protocol CSCoverageChartDelegate <NSObject>
 
-- (int)numberOfSlicesForGraph:(CSCoverageChart*)chart;
-- (CSCoverageSlice*)coverageGraph:(CSCoverageChart*)chart sliceForIndex:(int)index;
-- (CSCoverageArea*)coverageAreaForGraph:(CSCoverageChart*)chart;
-- (float)maximumRadiusForGraph:(CSCoverageChart*)chart;
+- (int)numberOfSlicesForChart:(CSCoverageChart*)chart;
+- (CSCoverageSlice*)coverageChart:(CSCoverageChart*)chart sliceForIndex:(int)index;
+- (CSCoverageArea*)coverageAreaForChart:(CSCoverageChart*)chart;
+- (float)maximumRadiusForChart:(CSCoverageChart*)chart;
 
 @end
 

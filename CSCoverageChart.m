@@ -37,8 +37,8 @@
     if (!setupCompleted) {
         
         if (self.delegate) {
-            self.area = [self.delegate coverageAreaForGraph:self];
-            self.slicesCount = [self.delegate numberOfSlicesForGraph:self];
+            self.area = [self.delegate coverageAreaForChart:self];
+            self.slicesCount = [self.delegate numberOfSlicesForChart:self];
         }
         
         [self reloadData];
@@ -51,7 +51,7 @@
     [super layoutSubviews];
 
     if (self.delegate) {
-        self.maximumRadius = [self.delegate maximumRadiusForGraph:self];        
+        self.maximumRadius = [self.delegate maximumRadiusForChart:self];
     }
 
     [self setupGraph];
@@ -65,7 +65,7 @@
     [self.slicesArray removeAllObjects];
     
     for (int i = 0; i < self.slicesCount; i++) {
-        CSCoverageSlice* slice = [self.delegate coverageGraph:self sliceForIndex:i];
+        CSCoverageSlice* slice = [self.delegate coverageChart:self sliceForIndex:i];
         if (slice != nil) {
             [self.slicesArray addObject:slice];
         }
